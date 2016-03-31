@@ -17,12 +17,23 @@ public class Main {
 
         System.out.print("Введите строку: ");
         String str = scanner.nextLine();
-        System.out.println("Результирующая строка: " + ArrayString.replaceSpaces(str.toCharArray(), str.length()));*/
+        System.out.println("Результирующая строка: " + ArrayString.replaceSpaces(str.toCharArray(), str.length()));
 
         int[][] matrix = { {1,  2,  3,  4},
                            {5,  6,  7,  8},
                            {9,  10, 11, 12},
                            {13, 14, 15, 16} };
-        ArrayString.rorate(matrix, matrix.length);
+        ArrayString.rorate(matrix, matrix.length); */
+
+        LinkedList list = new LinkedList();
+        list.addBack(3);
+        list.addBack(2);
+        list.addBack(1);
+        list.addFront(4);
+        list.printList();
+        list.delete(4);
+        list.delete(5);
+        list.delete(2);
+        list.printList();
     }
 }
