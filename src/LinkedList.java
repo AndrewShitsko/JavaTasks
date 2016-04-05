@@ -1,14 +1,23 @@
-class Node {
-    Node next; // указатель на следующий элемент
-    int data; // данные
+class NodeList {
+    NodeList next; // указатель на следующий элемент
+    Integer data; // данные
+
+    public NodeList() {
+        next = null;
+        data = null;
+    }
+
+    public NodeList(Integer data) {
+        this.data = data;
+    }
 }
 public class LinkedList {
-    private Node head; // указатель на первый элемент
-    private Node tail; // указатель на последний элемент
+    private NodeList head; // указатель на первый элемент
+    private NodeList tail; // указатель на последний элемент
 
     public void addFront(int data) // добавить вначало
     {
-        Node node = new Node(); // создаем новый элемент
+        NodeList node = new NodeList(); // создаем новый элемент
         node.data = data; // инициализируем данные, указатель на следующий элемент автоматически инициализируется как null
 
         if (head == null) { // если список пуст,
@@ -21,7 +30,7 @@ public class LinkedList {
     }
 
     public void addBack(int data) { // добавить в конец
-        Node node = new Node(); // создаем новый элемент
+        NodeList node = new NodeList(); // создаем новый элемент
         node.data = data;
 
         if (tail == null) { // если список пуст
@@ -34,7 +43,7 @@ public class LinkedList {
     }
 
     public void printList() { // вывод списка
-        Node node = head; // получаем ссылку на первый элемент
+        NodeList node = head; // получаем ссылку на первый элемент
         while (node != null) { // пока элемент существует
             System.out.print(node.data + " "); // выводим его данные
             node = node.next; // и переключаемся на следующий
@@ -55,7 +64,7 @@ public class LinkedList {
             return; // и выходим
         }
 
-        Node node = head; // иначе начинаем искать
+        NodeList node = head; // иначе начинаем искать
         while (node.next != null) { // пока следующий элемент существует
             if (node.next.data == data) { // проверяем следующий элемент
                 if (tail == node.next) tail = node; // если он последний, то переключаем указатель на последний элемент на текущий
